@@ -298,7 +298,7 @@ router.post("/sendpasswordlink",async(req,res)=>{
                 from:process.env.EMAIL,
                 to:email,
                 subject:" Email For password Reset from MOHAN Application",
-                text:`This Link Valid For 2 MINUTES https://majestic-yeot-68002b.netlify.app//forgotpassword/${userfind.id}/${setusertoken.verifytoken}`
+                text:`This Link Valid For 2 MINUTES https://capstonebackend-ivdw.onrender.com/forgotpassword/${userfind.id}/${setusertoken.verifytoken}`
             }
 
             transporter.sendMail(mailOptions,(error,info)=>{
@@ -398,6 +398,7 @@ router.delete("/:_id", async (req, res) => {
     res.send(post);
   } catch (error) {
     res.status(500).send(error);
+    
   }
 });
 
@@ -405,6 +406,7 @@ router.delete("/:_id", async (req, res) => {
 
 
 // change password
+
 
 router.post("/:id/:token",async(req,res)=>{
     const {id,token} = req.params;
@@ -446,5 +448,3 @@ module.exports = router;
 // 1 way connection
 // 1234 ->> e#@$hagsjd
 // 1234->> (e#@$hagsjd,e#@$hagsjd)=> true
-
-
